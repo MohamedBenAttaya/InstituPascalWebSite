@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>:: Brave booking :: Solutions e-tourisme, Syst&egrave;mes de r&eacute;servations par Internet pour Agences de voyages, H&ocirc;tels, Location de voiture et E-commerce</title>
+<meta name="Description" content="Brave booking, spécialisée dans la création de solutions e- tourisme, des systèmes de gestions d'offres et produits touristiques pour le compte  des agences de voyages, des hôtels, des agences de locations de voitures, ... Des solutions de réservation par Internet avec paiement sécurisé pour le compte des professionnels du tourisme.">
+<meta name="keywords" content="e-tourisme, paiement sécurisé, réservation, solution, moteur de réservation, tourisme, système, plateforme, modules, administration, site dynamique, internet, web, agences de voyages, TO, réceptifs, MICE, location de voitures, centres de thalassothérapie et de balnéothérapie, thalasso, balnéo, golf, plongée sous-marine, gites, maison de charme, hôtel, chaîne d'hôtel, cartes de crédit, visa, mastercard, affiliation, marque blanche, Web services, XML, clicktopay, SPS, siyaha, amadeus, gta, croisières costa tunisie ">
+<meta http-equiv="Content-Language" content="fr">
+<meta name="robots" content="All">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+<script type="text/javascript">
+
+		function verif_form()
+		{
+		   var f = document.form_contact;
+		   var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+           var nameExp = /^[a-zA-Z]+$/;;
+		   var numericExpression = /^[0-9]+$/;
+		   var controle = true ;
+		   var chaine = "";	
+		   
+		   var nom = f.nom.value;
+		   var raison = f.raison.value;
+		   var tel = f.tel.value;
+		   var email = f.email.value;
+		   var message = f.message.value;
+		   
+		   var tab = nom.split(" ");
+		    if(f.nom.value=="" || tab[0]=="Nom")
+			 {         
+				   chaine += " Champ <strong>Nom & Prénom</strong> Obligatoire<br />";
+					//document.FormContact.name.focus();
+					controle = false ;
+			 }
+			 
+			 if(f.email.value!="")
+			 {       
+					if(f.email.value.search(emailExp)==-1)
+					{         chaine += " Champ <strong>E-mail</strong> non valide<br />";
+							  //document.FormContact.email.focus();
+							  controle = false ;
+					 }
+			}
+			 else
+			 {
+				chaine += " Champ <strong>E-mail</strong> Obligatoire<br />";
+							  //document.FormContact.email.focus();
+							  controle = false ;
+				 
+			 } 
+			 if(f.message.value=="" || f.message.value=="Message")
+			 {         
+				   chaine += " Champ <strong>Message</strong> Obligatoire<br />";
+					//document.FormContact.name.focus();
+					controle = false ;
+			 }
+			 if(controle)
+			 {
+				  
+				  
+				  
+				  $(document).ready(function () { // on verifie que la page est chargée
+						// on lance l'ajax sur la page php avec certains paramètres
+							$.get("emails.php",{nom: nom , raison : raison , tel : tel , email : email ,  message : message},
+							function success(data){ // au succès on renvoie le résultat de la requête
+							  //document.getElementById('loading').style.display = 'none';	
+							 /* document.getElementById('error').innerHTML = " Votre message est envoy&eacute; avec succ&egrave;s<br /> 
+																			Nous vous contacterons dans les plus bref d&eacute;lais<br />Merci pour votre int&eacute;r&ecirc;t !";*/
+					document.getElementById('error').innerHTML = 'Votre message est envoy&eacute; avec succ&egrave;s<br /> 																			Nous vous contacterons dans les plus bref d&eacute;lais<br />Merci pour votre int&eacute;r&ecirc;t !';											
+							  
+						});
+					});	 
+			 }
+			 else 
+			 {
+				
+				document.getElementById('error').innerHTML = chaine; 
+				 
+			 }
+			 
+		}
+	</script>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23011153-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- InstanceEndEditable -->
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/slideshow.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+<script type="text/javascript">
+			// initialize slideshow (Cycle)
+			$(document).ready(function() {
+				if ($('#Slides').length > 0) {
+					$('#Slides').cycle({ 
+						fx: 'scrollHorz',
+						speed: 750,
+						timeout: 9000, 
+						randomizeEffects: false, 
+						easing: 'easeOutCubic',
+						next:   '.slideNext', 
+						prev:   '.slidePrev',
+						pager:  '#slidePager',
+						cleartypeNoBg: true
+					});
+				}
+			});
+		</script>
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+
+<div class="container">
+  <div id="raccourcis">
+  <ul>
+  <li><a href="Book/index.html" target="_blank" class="brochure"></a></li>
+
+      <li><a href="#" class="phone"></a></li>
+  </ul>
+  </div>
+
+  <div class="header">
+  <div id="logo" style="float:left"><a href="index.html"><img src="images/logo_bravebooking.gif" alt="Logo Bravebooking" name="Logo Bravebooking" width="239" height="52" id="Insert_logo" /></a> </div>
+  <!-- InstanceBeginEditable name="EditRegion4" -->
+  <div id="menu">
+    <ul>
+      <li><a href="index.html">ACCUEIL </a></li>
+      <li><a href="solutions.html">SOLUTIONS</a></li>
+      <li><a href="references.html">REFERENCES</a></li>
+      <li><a href="societe.html">SOCIETE</a></li>
+      <li class="last"><a href="contact.html" class="selected">CONTACT</a></li>
+    </ul>
+  </div>
+  <!-- InstanceEndEditable --><br class="clearfloat" />
+    <!-- end .header --></div>
+<div id="slideshow"> 
+            <!-- Slide show: jQuery Cycle (default) -->
+            <div id="Slideshow">
+              <div id="SlideTop"></div>
+              <div id="SlideRepeat"></div>
+              <div id="SlideBottom"></div>
+              <div id="Slides"> <a href="solutions.html"><img src="images/slideshow/solutions.png" width="980" height="243" /></a><a href="contact.html"><img src="images/slideshow/reprise.png" width="980" height="243" /></a><a href="http://www.amelvoyages.com"  target="_blank"><img src="images/slideshow/realisation.png" width="980" height="243" /></a></div>
+              <a href="#" class="slidePrev"></a> <a href="#" class="slideNext"></a>
+<!--              <div id="slidePager"></div>
+-->            </div>
+          </div>
+      <br class="clearfloat" />
+      <!-- InstanceBeginEditable name="EditRegion3" -->
+      <div class="content">
+      <div  class="titre">
+<img src="images/titre/contactus.gif" border="0" />
+      </div>
+        <div id="error" class="error">
+        Veuillez remplir ce formulaire pour vous faire part de vos demandes
+               </div>
+
+      <div class="formcontacts">
+
+      <form enctype="multipart/form-data" method="post" action="" name="form_contact">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><input type="text" value="Nom &amp; Prénom" onblur="if(this.value == ''){this.value='Nom &amp; Prénom'}" onfocus="if(this.value=='Nom &amp; Prénom'){this.value=''}" id="nom" name="nom" />
+              <br />
+              <input type="text" value="Raison sociale" onblur="if(this.value == ''){this.value='Raison sociale'}" onfocus="if(this.value=='Raison sociale'){this.value=''}" id="raison" name="raison" />
+              <br />
+              <input type="text" value="N° de Tél." onblur="if(this.value == ''){this.value='N° de Tél.'}" onfocus="if(this.value=='N° de Tél.'){this.value=''}" id="tel" name="tel" />
+              <br />
+              <input type="text" value="E-mail" onblur="if(this.value == ''){this.value='E-mail'}" onfocus="if(this.value=='E-mail'){this.value=''}" id="email" name="email" /></td>
+            <td valign="top"><textarea onblur="if(this.value == ''){this.value='Message'}" onfocus="if(this.value=='Message'){this.value=''}" id="message" name="message" cols="" rows="8">Message</textarea></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align="right"><input type="button" onclick="verif_form()" value="Envoyer Message" class="send" name="Submit" /></td>
+          </tr>
+        </table>
+    <br>
+      </form>
+</div>
+          <div style="float:left">
+            <p><strong>Colisée Soula, </strong><br />
+              5ème Etage, Bloc C<br />
+              2092 El Manar 2<br />
+              Tunis -
+              Tunisie<br />
+  <br />
+  <strong>Tél. :</strong><span tabindex="-1" dir="ltr"><span dir="ltr" title="Appeler ce numéro de téléphone en/au(x) Tunisie avec Skype : +21671874090"><span skypeaction="skype_dropdown" title="Actions Skype"> </span>(+216) 71 87 40 90     </span> </span><br />
+  <strong>Fax : </strong>(+216) 71 87 41 90<br />
+  <br />
+  <strong>E-mail :</strong> <a href="mailto:info@bravebooking.com" class="ouremail">info@bravebooking.com</a></p>
+        </div>
+        <p><br class="clearfloat" />
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p><br />
+        </p>
+        </p>
+        <!-- end .content -->
+      </div>
+      <!-- InstanceEndEditable --><br class="clearfloat" />
+  <div class="footer">
+<div style="float:left">
+<ul>
+<li><a href="solutions.html">Solutions e-tourisme pour agences de voyages</a></li>
+<li><a href="solutions.html">Solutions e-tourisme pour H&ocirc;tels et cha&icirc;ne d'h&ocirc;tels</a></li>
+<li><a href="solutions.html">Solutions de paiement électronique</a></li>
+<li><a href="solutions.html">Solutions de réservation pour Hôtels et agences de voyages</a></li>
+
+</ul>
+</div>
+<div style="float:left">
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="solutions.html">Solutions</a></li>
+<li><a href="references.html">Références</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="societe.html">Société</a></li>
+
+</ul>
+</div>
+<div style="float:left; padding-top:20px;">
+<a href="#"><img src="images/facebook.gif" border="0" /></a>
+<a href="#"><img src="images/linkedin.gif" border="0" /></a>
+<a href="#"><img src="images/vimeo.gif" border="0" /></a>
+</div>
+<div style="float:right;"><span>&copy; 2011 bravebooking</span></div>
+<br class="clearfloat" />
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+<!-- InstanceEnd --></html>
